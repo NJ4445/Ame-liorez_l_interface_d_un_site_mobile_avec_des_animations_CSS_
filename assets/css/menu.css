@@ -215,13 +215,13 @@ body
 	font-size: 25px;
 }
 
-.heart-label .fa-regular
+.menu__header .heart-label .fa-regular
 {
 	opacity: 1;
 	transition: opacity 0.2s ease;
 }
 
-.heart-label .fa-solid
+.menu__header .heart-label .fa-solid
 {
 	position: absolute;
 	top: 0;
