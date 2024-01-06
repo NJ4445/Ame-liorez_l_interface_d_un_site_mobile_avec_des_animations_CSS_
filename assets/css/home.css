@@ -411,27 +411,38 @@ header .header__title
 }
 
 /* Block: heart */
-.heart-label
-{
+.checkbox-heart {
 	position: absolute;
-	top: 190px;
-	right: 20px;
-	display: flex;
-	align-items: center;
+	display: block;
+	z-index: 1;
+	bottom: 5px;
+	right: 5px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	height: 60px;
+	width: 15%;
+  }
+  
+  .checkbox-heart + .checkbox-heart-label {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
 	font-size: 25px;
-}
-
-.restaurants-card .heart-label .fa-regular
-{
+  }
+  
+  .checkbox-heart + .checkbox-heart-label .fa-regular {
+	position: absolute;
+	bottom: 32px;
+	right: 20px;
 	opacity: 1;
 	transition: opacity 0.2s ease;
-}
-
-.restaurants-card .heart-label .fa-solid
-{
+  }
+  
+  .checkbox-heart + .checkbox-heart-label .fa-solid {
 	position: absolute;
-	top: 0;
-	left: 0;
+	bottom: 30px;
+	right: 20px;
 	background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -439,17 +450,15 @@ header .header__title
 	transform-origin: bottom;
 	transform: scale(0);
 	transition: transform 0.2s ease-out;
-}
-
-.heart-label:hover .fa-solid
-{
+  }
+  
+  .checkbox-heart:checked + .checkbox-heart-label .fa-solid {
 	transform: scale(1);
-}
-
-.heart-label:hover .fa-regular
-{
+  }
+  
+  .checkbox-heart:checked + .checkbox-heart-label .fa-regular {
 	opacity: 0;
-}
+  }
 
 /* Block: footer */
 .footer
