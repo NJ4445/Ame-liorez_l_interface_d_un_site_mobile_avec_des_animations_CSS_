@@ -455,15 +455,6 @@ header .header__title
 	transform: scale(1);
   }
 
-.heart-label:hover .fa-solid
-{
-	transform: scale(1);
-}
-
-.heart-label:hover .fa-regular
-{
-	opacity: 0;
-}
 
 /* Block: footer */
 .footer
