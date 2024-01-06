@@ -421,13 +421,13 @@ header .header__title
 	font-size: 25px;
 }
 
-.restaurants-card .heart-label .fa-regular
+.heart-label .fa-regular
 {
 	opacity: 1;
 	transition: opacity 0.2s ease;
 }
 
-.restaurants-card .heart-label .fa-solid
+.heart-label .fa-solid
 {
 	position: absolute;
 	top: 0;
