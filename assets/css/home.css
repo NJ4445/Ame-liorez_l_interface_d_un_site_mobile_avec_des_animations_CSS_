@@ -421,18 +421,13 @@ header .header__title
 	font-size: 25px;
 }
 
-/* Cacher les cases à cocher */
-.heart-checkbox {
-	display: none;
-  }
-
-.heart-label .fa-regular
+.restaurants-card .heart-label .fa-regular
 {
 	opacity: 1;
 	transition: opacity 0.2s ease;
 }
 
-.heart-label .fa-solid
+.restaurants-card .heart-label .fa-solid
 {
 	position: absolute;
 	top: 0;
@@ -446,15 +441,15 @@ header .header__title
 	transition: transform 0.2s ease-out;
 }
 
-/* Style du cœur plein lorsque la case à cocher est cochée */
-.heart-checkbox:checked + .fa-regular {
+.heart-label:hover .fa-solid
+{
 	transform: scale(1);
-  }
-  
-  .heart-checkbox:checked + .fa-solid {
-	opacity: 0;
-  }
+}
 
+.heart-label:hover .fa-regular
+{
+	opacity: 0;
+}
 
 /* Block: footer */
 .footer
