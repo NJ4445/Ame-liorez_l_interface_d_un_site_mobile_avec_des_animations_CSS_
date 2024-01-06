@@ -421,6 +421,11 @@ header .header__title
 	font-size: 25px;
 }
 
+/* Cacher les cases à cocher */
+.heart-checkbox {
+	display: none;
+  }
+
 .heart-label .fa-regular
 {
 	opacity: 1;
@@ -440,6 +445,15 @@ header .header__title
 	transform: scale(0);
 	transition: transform 0.2s ease-out;
 }
+
+/* Style du cœur plein lorsque la case à cocher est cochée */
+.heart-checkbox:checked + .fa-regular {
+	opacity: 0;
+  }
+  
+  .heart-checkbox:checked + .fa-solid {
+	transform: scale(1);
+  }
 
 .heart-label:hover .fa-solid
 {
