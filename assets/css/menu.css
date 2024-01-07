@@ -286,7 +286,7 @@ body
 	font-weight: bold;
 	font-size: 20px;
 	color: #FFFFFF;
-	font-family: "Roboto";
+	font-family: "Shrikhand";
 	text-decoration: none;
 }
 
@@ -315,17 +315,20 @@ body
 .footer__nav-link--text1
 {
 	margin-left: 10px;
+	font-family: "Roboto";
 }
 
 .footer__nav-link--text2
 {
 	margin-left: 5px;
 	top: 26px;
+	font-family: "Roboto";
 }
 
 .footer__nav-link--text3, .footer__nav-link--contact
 {
 	color: #FFFFFF;
+	font-family: "Roboto";
 }
 
 @media screen and (min-width: 768px)
