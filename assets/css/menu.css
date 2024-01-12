@@ -194,10 +194,16 @@ body {
   align-items: center;
   font-size: 25px;
 }
-.heart-label .fa-regular {
+
+.heart-checkbox {
+  display: none; /* Masquer la case à cocher par défaut */
+}
+
+.fa-regular {
   opacity: 1;
   transition: opacity 0.2s ease;
 }
+
 .heart-label .fa-solid {
   position: absolute;
   top: 0;
@@ -210,10 +216,14 @@ body {
   transform: scale(0);
   transition: transform 0.2s ease-out;
 }
-.heart-label:hover .fa-solid {
+
+/* Afficher le cœur solide lorsque la case à cocher est cochée */
+.heart-checkbox:checked + .heart-label .fa-solid {
   transform: scale(1);
 }
-.heart-label:hover .fa-regular {
+
+/* Masquer le cœur régulier lorsque la case à cocher est cochée */
+.heart-checkbox:checked + .heart-label .fa-regular {
   opacity: 0;
 }
 
