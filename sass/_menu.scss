@@ -10,6 +10,85 @@ $colorWhite:#FFFFFF;
 $backgroundMenu:#F3F3F3;
 $backgroundFooter: #353535;
 
+/* Mixin pour text-ellipsis */
+@mixin text-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+  }
+
+  /* Mixin pour la transition */
+  @mixin transition($property, $duration, $timing-function: ease) {
+	transition: $property $duration $timing-function;
+  }
+
+   /* Mixin pour la bordure arrondie */
+  @mixin border-radius($radius) {
+	border-radius: $radius;
+  }
+
+   /* Mixin pour la boîte d'ombre */
+  @mixin box-shadow($x, $y, $blur, $color) {
+	box-shadow: $x $y $blur $color;
+  }
+
+   /* Mixin pour la flexibilité */
+  @mixin flex($direction: row, $justify-content: center, $align-items: center) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify-content;
+	align-items: $align-items;
+  }
+
+  /* Mixin pour le bloc "heart" */
+@mixin bloc-heart {
+	position: absolute;
+	top: 40px;
+	right: 55px;
+	display: flex;
+	align-items: center;
+	font-size: 25px;
+  
+	.fa-solid {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  background: linear-gradient(0deg, $primaryColor 0%, $secondaryColor 100%);
+	  -webkit-background-clip: text;
+	  background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	  transform-origin: bottom;
+	  transform: scale(0);
+	  transition: transform 0.2s ease-out;
+	}
+  }
+
+  .heart-checkbox {
+	display: none;
+  }
+  
+  .fa-regular {
+	opacity: 1;
+	transition: opacity 0.2s ease;
+  }
+  
+  .heart-checkbox:checked + .heart-label {
+	.fa-solid {
+	  transform: scale(1);
+	}
+  
+	.fa-regular {
+	  opacity: 0;
+	}
+  }
+
+  /* Mixin pour le footer */
+@mixin footer-styles {
+	padding: 22px 20px 10px 25px;
+	background: $backgroundFooter;
+	font-family: $police-logo-titres;
+  }
+  
 /* Général */
 html
 {
@@ -31,10 +110,7 @@ body
 /* Block: header */
 .header
 {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 10px 0 5px 0;
+	@include flex(column, flex-start, center);
 }
 
 .header__title
@@ -53,7 +129,7 @@ body
 	color: black;
 	position: absolute;
 	left: 15px;
-	top: 20px;
+	top: 10px;
 	z-index: 1000;
 }
 
@@ -88,7 +164,7 @@ body
 	justify-content: flex-start;
 	align-items: center;
 	background: $colorWhite;
-	border-radius: 15px;
+	@include border-radius(15px);
 	padding-right: 15px;
 	margin-top: 15px;
 	overflow: hidden;
@@ -109,23 +185,21 @@ body
 	animation: menu-section-in 0.5s ease-out backwards;
 }
 
-.menu__section--title
-{
+.menu__section--title {
 	text-transform: uppercase;
 	font-size: 16px;
 	font-weight: 300;
 	font-family: $police-texte;
 	margin-bottom: 5px;
 	margin-top: 0;
-}
-
-.menu__section--separateur
-{
+  }
+  
+  .menu__section--separateur {
 	width: 40px;
 	height: 3px;
 	background: $tertiaryColor;
-}
-
+  }
+  
 .menu-card
 {
 	position: relative;
@@ -139,46 +213,40 @@ body
 	overflow: hidden;
 }
 
-.menu-card__checkbox
-{
+.menu-card__checkbox {
 	z-index: 3;
 	position: absolute;
 	appearance: none;
 	width: 100%;
 	height: 100%;
 	margin: 0;
-}
-
-.menu-card__checkbox:checked + .menu-card__text-container
-{
+  }
+  
+  .menu-card__checkbox:checked + .menu-card__text-container {
 	width: calc(100% - 130px);
-}
-
-.menu-card__text-container {
+  }
+  
+  .menu-card__text-container {
 	padding: 15px;
 	width: calc(100% - 50px);
-	transition: width 0.5s ease;
-
+	@include transition(width, 0.5s);
+  
 	h3 {
-		margin: 0;
-		font-size: 18px;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		font-weight: 500;
+	  margin: 0;
+	  font-size: 18px;
+	  @include text-ellipsis;
+	  font-weight: 500;
 	}
-
+  
 	p {
-		margin: 5px 0 0;
-		font-size: 14px;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		font-weight: 300;
-		font-family: $police-texte;
+	  margin: 5px 0 0;
+	  font-size: 14px;
+	  @include text-ellipsis;
+	  font-weight: 300;
+	  font-family: $police-texte;
 	}
-}
-
+  }
+  
 .menu-card__price
 {
 	position: relative;
@@ -215,45 +283,15 @@ body
 
 /* Block: heart */
 .heart-label {
-    position: absolute;
-    top: 40px;
-    right: 55px;
-    display: flex;
-    align-items: center;
-    font-size: 25px;
-}
-
-.heart-checkbox {
-	display: none; 
-  }
-  
-  .fa-regular {
-	opacity: 1;
-	transition: opacity 0.2s ease;
-  }
-  
-  .heart-label .fa-solid {
 	position: absolute;
-	top: 0;
-	left: 0;
-	background: linear-gradient(0deg, $primaryColor 0%, $secondaryColor 100%);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	transform-origin: bottom;
-	transform: scale(0);
-	transition: transform 0.2s ease-out;
+	top: 40px;
+	right: 55px;
+	display: flex;
+	align-items: center;
+	font-size: 25px;
+	@include bloc-heart;
   }
   
-  .heart-checkbox:checked + .heart-label .fa-solid {
-	transform: scale(1);
-  }
-  
-  .heart-checkbox:checked + .heart-label .fa-regular {
-	opacity: 0;
-  }
-  
-
 /* Block: button */
 .button {
 	width: 40%;
@@ -273,16 +311,14 @@ body
   
 	&:hover {
 	  filter: brightness(1.2);
-	  box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.1);
+	  @include box-shadow(0px, 3px, 7px, 2px rgba(0, 0, 0, 0.1));
 	}
   }
 
   /* Block: footer */
 .footer
 {
-	padding: 22px 20px 10px 25px;
-	background: $backgroundFooter;
-	font-family: $police-logo-titres;
+	@include footer-styles;
 }
 
 .footer__logo a

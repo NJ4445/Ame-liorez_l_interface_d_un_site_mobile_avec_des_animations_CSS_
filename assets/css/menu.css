@@ -1,6 +1,29 @@
 @charset "UTF-8";
 /* Variables pour les polices */
 /* Variables pour les couleurs */
+/* Mixin pour text-ellipsis */
+/* Mixin pour la transition */
+/* Mixin pour la bordure arrondie */
+/* Mixin pour la boîte d'ombre */
+/* Mixin pour la flexibilité */
+/* Mixin pour le bloc "heart" */
+.heart-checkbox {
+  display: none;
+}
+
+.fa-regular {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.heart-checkbox:checked + .heart-label .fa-solid {
+  transform: scale(1);
+}
+.heart-checkbox:checked + .heart-label .fa-regular {
+  opacity: 0;
+}
+
+/* Mixin pour le footer */
 /* Général */
 html {
   scroll-behavior: smooth;
@@ -20,9 +43,9 @@ body {
 /* Block: header */
 .header {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  padding: 10px 0 5px 0;
 }
 
 .header__title {
@@ -39,7 +62,7 @@ body {
   color: black;
   position: absolute;
   left: 15px;
-  top: 20px;
+  top: 10px;
   z-index: 1000;
 }
 
@@ -193,17 +216,13 @@ body {
   display: flex;
   align-items: center;
   font-size: 25px;
+  position: absolute;
+  top: 40px;
+  right: 55px;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
 }
-
-.heart-checkbox {
-  display: none;
-}
-
-.fa-regular {
-  opacity: 1;
-  transition: opacity 0.2s ease;
-}
-
 .heart-label .fa-solid {
   position: absolute;
   top: 0;
@@ -215,14 +234,6 @@ body {
   transform-origin: bottom;
   transform: scale(0);
   transition: transform 0.2s ease-out;
-}
-
-.heart-checkbox:checked + .heart-label .fa-solid {
-  transform: scale(1);
-}
-
-.heart-checkbox:checked + .heart-label .fa-regular {
-  opacity: 0;
 }
 
 /* Block: button */

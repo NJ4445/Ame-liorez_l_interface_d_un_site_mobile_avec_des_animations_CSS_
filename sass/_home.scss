@@ -11,6 +11,131 @@ $backgroundHero:#F3F3F3;
 $backgroundMap:#EAEAEA;
 $backgroundFooter: #353535;
 
+/* Mixin Loader::before et ::after */
+@mixin loader-before-after {
+	&::before {
+	  border-top: 4px solid $primaryColor;
+	  border-bottom: 4px solid $secondaryColor;
+	  width: 50px;
+	  height: 50px;
+	}
+  
+	&::after {
+	  content: '';
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  background: green;
+	  margin: 0;
+	  opacity: 0;
+	  border-top: 4px solid $secondaryColor;
+	  border-bottom: 4px solid $primaryColor;
+	  transition: all 0.5s ease-out;
+	}
+  }
+
+  /* Mixin Loader-container avec effet de survol */
+  @mixin loader-container {
+	display: flex;
+	justify-content: center;
+	font-size: 100px;
+	overflow: hidden;
+	animation: hideLoader 2.9s ease-out forwards;
+  
+	&:hover {
+	  margin-right: 20px;
+	  margin-left: 20px;
+  
+	  &::after {
+		opacity: 1;
+	  }
+	}
+  }
+
+  /* Mixin pour le bouton */
+@mixin custom-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 15px 20px;
+	margin: 30px;
+	color: $colorWhite;
+	text-decoration: none;
+	font-weight: 700;
+	filter: brightness(1);
+	border-radius: 50px;
+	background: linear-gradient(0deg, $primaryColor 0%, $secondaryColor 100%);
+	transition: all 0.2s ease;
+	cursor: pointer;
+
+	&:hover {
+		filter: brightness(1.2);
+		box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.1);
+	}
+}
+
+/* Mixin pour restaurants-card-badge-new */
+@mixin restaurants-card-badge-new {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	padding: 6px 10px;
+	border-radius: 3px;
+	background: $tertiaryColor;
+	color: #008766;
+	font-weight: 600;
+  }
+
+  /* Mixin pour le bloc "heart" */
+  @mixin heart-checkbox-style {
+	position: absolute;
+	display: block;
+	z-index: 1;
+	bottom: 5px;
+	right: 5px;
+	appearance: none;
+	height: 50px;
+	width: 50px;
+  
+	& + .checkbox-heart__label {
+	  position: absolute;
+	  bottom: 0px;
+	  right: 0px;
+	  font-size: 25px;
+  
+	  .fa-regular {
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+		opacity: 1;
+		transition: opacity 0.2s ease;
+	  }
+  
+	  .fa-solid {
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+		background: linear-gradient(0deg, $primaryColor 0%, $secondaryColor 100%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		transform-origin: bottom;
+		transform: scale(0);
+		transition: transform 0.2s ease-out;
+	  }
+	}
+  
+	&:checked + .checkbox-heart__label .fa-solid {
+	  transform: scale(1);
+	}
+  
+	&:checked + .checkbox-heart__label .fa-regular {
+	  opacity: 0;
+	}
+  }
+  
+
+
 /* Utilisation keyframes Loader */
 @keyframes no-scroll
 {
@@ -113,27 +238,9 @@ html
 	background: radial-gradient(circle, $colorWhite 0%, rgba(53, 53, 53, 1) 100%);
 	transform: translateX(0);
 	animation: loader-out 3s ease-out forwards;
-  
-	&::before {
-	  border-top: 4px solid $primaryColor;
-	  border-bottom: 4px solid $secondaryColor;
-	  width: 50px;
-	  height: 50px;
-	}
-  
-	&::after {
-	  content: '';
-	  position: absolute;
-	  width: 100%;
-	  height: 100%;
-	  background: green;
-	  margin: 0;
-	  opacity: 0;
-	  border-top: 4px solid $secondaryColor;
-	  border-bottom: 4px solid $primaryColor;
-	  transition: all 0.5s ease-out;
-	}
+	@include loader-before-after;
   }
+
   .loader__title {
 	font-family: $police-logo-titres;
 	z-index: 5;
@@ -146,20 +253,7 @@ html
 }
 
 .loader__container {
-	display: flex;
-	justify-content: center;
-	font-size: 100px;
-	overflow: hidden;
-	animation: hideLoader 2.9s ease-out forwards;
-}
-
-.loader__container:hover {
-	margin-right: 20px;
-	margin-left: 20px;
-
-	&::after {
-		opacity: 1;
-	}
+	@include loader-container;
 }
 
 /* Block: header */
@@ -238,24 +332,7 @@ header {
 }
 
 .button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 15px 20px;
-	margin: 30px;
-	color: $colorWhite;
-	text-decoration: none;
-	font-weight: 700;
-	filter: brightness(1);
-	border-radius: 50px;
-	background: linear-gradient(0deg, $primaryColor 0%, $secondaryColor 100%);
-	transition: all 0.2s ease;
-	cursor: pointer;
-  
-	&:hover {
-	  filter: brightness(1.2);
-	  box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.1);
-	}
+	@include custom-button;
   }
 
   /* Block: fonctionnement */
@@ -298,6 +375,7 @@ header {
 		transform: scale(1.1);
 	}
 }
+
 .fonctionnement-card-title {
 	position: relative;
 	left: calc(50% - 80px);
@@ -374,14 +452,7 @@ header {
 
 .restaurants-card__badge-new
 {
-	position: absolute;
-	top: 15px;
-	right: 15px;
-	padding: 6px 10px;
-	border-radius: 3px;
-	background: $tertiaryColor;
-	color: #008766;
-	font-weight: 600;
+	@include restaurants-card-badge-new;
 }
 
 .restaurants-card img
@@ -405,50 +476,7 @@ header {
 
 /* Block: heart */
 .checkbox-heart {
-	position: absolute;
-	display: block;
-	z-index: 1;
-	bottom: 5px;
-	right: 5px;
-	appearance: none;
-	height: 50px;
-	width: 50px;
-  
-	& + .checkbox-heart__label {
-	  position: absolute;
-	  bottom: 0px;
-	  right: 0px;
-	  font-size: 25px;
-  
-	  .fa-regular {
-		position: absolute;
-		bottom: 20px;
-		right: 20px;
-		opacity: 1;
-		transition: opacity 0.2s ease;
-	  }
-  
-	  .fa-solid {
-		position: absolute;
-		bottom: 20px;
-		right: 20px;
-		background: linear-gradient(0deg, $primaryColor 0%, $secondaryColor 100%);
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		transform-origin: bottom;
-		transform: scale(0);
-		transition: transform 0.2s ease-out;
-	  }
-	}
-  
-	&:checked + .checkbox-heart__label .fa-solid {
-	  transform: scale(1);
-	}
-  
-	&:checked + .checkbox-heart__label .fa-regular {
-	  opacity: 0;
-	}
+	@include heart-checkbox-style;
   }
   
   /* Block: footer */

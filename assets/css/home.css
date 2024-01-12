@@ -1,6 +1,11 @@
 @charset "UTF-8";
 /* Variables pour les polices */
 /* Variables pour les couleurs */
+/* Mixin Loader::before et ::after */
+/* Mixin Loader-container avec effet de survol */
+/* Mixin pour le bouton */
+/* Mixin pour restaurants-card-badge-new */
+/* Mixin pour le bloc "heart" */
 /* Utilisation keyframes Loader */
 @keyframes no-scroll {
   from {
@@ -115,7 +120,6 @@ html {
   overflow: hidden;
   animation: hideLoader 2.9s ease-out forwards;
 }
-
 .loader__container:hover {
   margin-right: 20px;
   margin-left: 20px;
