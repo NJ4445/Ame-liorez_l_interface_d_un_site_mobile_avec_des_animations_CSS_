@@ -196,7 +196,7 @@ body {
 }
 
 .heart-checkbox {
-  display: none; /* Masquer la case à cocher par défaut */
+  display: none;
 }
 
 .fa-regular {
@@ -217,12 +217,10 @@ body {
   transition: transform 0.2s ease-out;
 }
 
-/* Afficher le cœur solide lorsque la case à cocher est cochée */
 .heart-checkbox:checked + .heart-label .fa-solid {
   transform: scale(1);
 }
 
-/* Masquer le cœur régulier lorsque la case à cocher est cochée */
 .heart-checkbox:checked + .heart-label .fa-regular {
   opacity: 0;
 }

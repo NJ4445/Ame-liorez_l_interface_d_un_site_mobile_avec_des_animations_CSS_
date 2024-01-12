@@ -224,34 +224,35 @@ body
 }
 
 .heart-checkbox {
-    display: none; 
-}
-
-.fa-regular {
-    opacity: 1;
-    transition: opacity 0.2s ease;
-}
-
-.heart-label .fa-solid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform-origin: bottom;
-    transform: scale(0);
-    transition: transform 0.2s ease-out;
-}
-
-.heart-checkbox:checked + .heart-label .fa-solid {
-    transform: scale(1);
-}
-
-.heart-checkbox:checked + .heart-label .fa-regular {
-    opacity: 0;
-}
+	display: none; 
+  }
+  
+  .fa-regular {
+	opacity: 1;
+	transition: opacity 0.2s ease;
+  }
+  
+  .heart-label .fa-solid {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transform-origin: bottom;
+	transform: scale(0);
+	transition: transform 0.2s ease-out;
+  }
+  
+  .heart-checkbox:checked + .heart-label .fa-solid {
+	transform: scale(1);
+  }
+  
+  .heart-checkbox:checked + .heart-label .fa-regular {
+	opacity: 0;
+  }
+  
 
 /* Block: button */
 .button {
