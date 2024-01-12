@@ -236,7 +236,7 @@ body
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
+	background: linear-gradient(0deg, $primaryColor 0%, $secondaryColor 100%);
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
