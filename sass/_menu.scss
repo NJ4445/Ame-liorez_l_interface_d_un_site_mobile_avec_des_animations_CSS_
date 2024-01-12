@@ -1,0 +1,494 @@
+/* Variables pour les polices */
+$police-logo-titres: 'Shrikhand', cursive;
+$police-texte: 'Roboto', sans-serif;
+
+/* Variables pour les couleurs */
+$primaryColor:#9356DC;
+$secondaryColor:#FF79DA;
+$tertiaryColor:#99E2D0;
+$colorWhite:#FFFFFF;
+$backgroundMenu:#F3F3F3;
+$backgroundFooter: #353535;
+
+/* Général */
+html
+{
+	scroll-behavior: smooth;
+}
+
+body
+{
+	width: 100%;
+	background: $colorWhite;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	min-width: 320px;
+}
+
+/* Block: header */
+.header
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 0 5px 0;
+}
+
+.header__title
+{
+	width: 50%;
+	text-align: center;
+	margin: 0;
+	font-style: italic;
+	font-weight: bold;
+	font-family: $police-logo-titres;
+	font-size: 25px;
+}
+
+.fa-arrow-left
+{
+	color: black;
+	position: absolute;
+	left: 15px;
+	top: 20px;
+	z-index: 1000;
+}
+
+.restaurants__card-img
+{
+	height: 250px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	width: 100%;
+}
+
+/* Block: menu */
+.menu
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	margin-bottom: -50px;
+	min-width: 330px;
+	background: $backgroundMenu;
+	border-top-right-radius: 50px;
+	border-top-left-radius: 50px;
+	transform: translateY(-50px);
+	overflow: hidden;
+}
+
+.menu-card
+{
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	background: $colorWhite;
+	border-radius: 15px;
+	padding-right: 15px;
+	margin-top: 15px;
+	overflow: hidden;
+}
+
+.menu__header-title
+{
+	width: 100%;
+	font-size: 25px;
+	font-family: $police-logo-titres;
+}
+
+.menu__section
+{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 40px;
+	animation: menu-section-in 0.5s ease-out backwards;
+}
+
+.menu__section--title
+{
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 300;
+	font-family: $police-texte;
+	margin-bottom: 5px;
+	margin-top: 0;
+}
+
+.menu__section--separateur
+{
+	width: 40px;
+	height: 3px;
+	background: $tertiaryColor;
+}
+
+.menu-card
+{
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	background: $colorWhite;
+	border-radius: 15px;
+	padding-right: 15px;
+	margin-top: 15px;
+	overflow: hidden;
+}
+
+.menu-card__checkbox
+{
+	z-index: 3;
+	position: absolute;
+	appearance: none;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.menu-card__checkbox:checked + .menu-card__text-container
+{
+	width: calc(100% - 130px);
+}
+
+.menu-card__text-container {
+	padding: 15px;
+	width: calc(100% - 50px);
+	transition: width 0.5s ease;
+
+	h3 {
+		margin: 0;
+		font-size: 18px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-weight: 500;
+	}
+
+	p {
+		margin: 5px 0 0;
+		font-size: 14px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-weight: 300;
+		font-family: $police-texte;
+	}
+}
+
+.menu-card__price
+{
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	padding-bottom: 15px;
+	font-weight: 600;
+	height: 55px;
+	width: 30px;
+}
+
+.menu-card__price--checkbox-container {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: -1px;
+	right: -85px;
+	height: 72px;
+	width: 70px;
+	background: $tertiaryColor;
+  
+	.checkbox-circle {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  width: 25px;
+	  height: 25px;
+	  border-radius: 50%;
+	  background: $colorWhite;
+	  color: $tertiaryColor;
+	}
+  }
+
+  /* Block: heart */
+.heart-label {
+	position: absolute;
+	top: 40px;
+	right: 55px;
+	display: flex;
+	align-items: center;
+	font-size: 25px;
+  
+	.fa-regular {
+	  opacity: 1;
+	  transition: opacity 0.2s ease;
+	}
+  
+	.fa-solid {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  background: linear-gradient(0deg, $primaryColor 0%, $secondaryColor 100%);
+	  -webkit-background-clip: text;
+	  background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	  transform-origin: bottom;
+	  transform: scale(0);
+	  transition: transform 0.2s ease-out;
+	}
+  
+	&:hover {
+	  .fa-solid {
+		transform: scale(1);
+	  }
+  
+	  .fa-regular {
+		opacity: 0;
+	  }
+	}
+  }
+  
+/* Block: button */
+.button {
+	width: 40%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	margin: 0px 50px 20px 90px;
+	color: $colorWhite;
+	text-decoration: none;
+	font-weight: 700;
+	filter: brightness(1);
+	border-radius: 50px;
+	background: linear-gradient(0deg, $primaryColor 0%, $secondaryColor 100%);
+	transition: all 0.2s ease;
+	cursor: pointer;
+  
+	&:hover {
+	  filter: brightness(1.2);
+	  box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.1);
+	}
+  }
+
+  /* Block: footer */
+.footer
+{
+	padding: 22px 20px 10px 25px;
+	background: $backgroundFooter;
+	font-family: $police-logo-titres;
+}
+
+.footer__logo a
+{
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 20px;
+	color: $colorWhite;
+	text-decoration: none;
+}
+
+.footer__nav
+{
+	list-style: none;
+	padding: 0;
+}
+
+.footer__nav-item
+{
+	margin-top: 5px;
+	gap: 20px;
+	color: #f6f6f6;
+}
+
+.footer__nav-link
+{
+	width: 100%;
+	font-size: 16px;
+	font-weight: 500;
+	color: $colorWhite;
+	text-decoration: none;
+	font-family: $police-texte;
+}
+
+.footer__nav-link--text1
+{
+	margin-left: 10px;
+	
+}
+
+.footer__nav-link--text2
+{
+	margin-left: 5px;
+	top: 26px;
+}
+
+/* Version tablette (min-width: 768px) */
+@media screen and (min-width: 768px)
+{
+	.header
+	{
+		display: flex;
+		padding: 15px;
+	}
+
+	.fa-arrow-left
+	{
+		position: absolute;
+		left: 15px;
+		top: 25px;
+	}
+
+	.menu__header-title
+	{
+		text-align: center;
+		justify-content: center;
+	}
+
+	.heart-label
+	{
+		right: 220px;
+	}
+
+	.card__title::after
+	{
+		width: 5%;
+	}
+
+	.button
+	{
+		width: 20%;
+		margin: 0 auto 20px;
+	}
+}
+
+/* Version desktop (min-width: 1440px) */
+@media screen and (min-width: 1440px)
+{
+	.menu
+	{
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 50px 180px 0 180px;
+	}
+
+	.fa-arrow-left
+	{
+		top: 35px;
+		transform: scale(1);
+		transition: transform 0.3s ease;
+	}
+
+	.fa-arrow-left:hover
+	{
+		transform: scale(2);
+	}
+
+	.header__title
+	{
+		font-size: 35px;
+	}
+
+	.restaurants__card-img
+	{
+		height: 500px;
+	}
+
+	.heart-label
+	{
+		top: 80px;
+		right: 23rem;
+	}
+
+	.button
+	{
+		width: 20%;
+		margin-bottom: 35px;
+		padding: 15px;
+	}
+
+	/* Animation des sections du menu */
+	.first-section
+	{
+		animation-delay: 0.2s;
+	}
+
+	.second-section
+	{
+		animation-delay: 0.4s;
+	}
+
+	.third-section
+	{
+		animation-delay: 0.6s;
+	}
+
+	@keyframes menu-section-in
+	{
+		from
+		{
+			transform: translateX(100vw);
+		}
+
+		to
+		{
+			transform: translateX(0);
+		}
+	}
+
+	.footer
+	{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		padding: 30px 25px 10px 25px;
+		font-size: 20px;
+	}
+
+	.footer__logo a
+	{
+		width: 10%;
+		display: flex;
+		align-items: center;
+		text-align: center;
+		font-size: 1rem;
+		margin-right: 3rem;
+	}
+
+	.footer__nav
+	{
+		width: 50%;
+		display: flex;
+		margin-left: 30rem;
+		gap: 10px;
+		justify-content: flex-end;
+	}
+
+	.footer__nav-link
+	{
+		margin: 0;
+		padding: 0;
+	}
+
+	.footer__nav-link--text1, .footer__nav-link--text2
+	{
+		margin-left: 5px;
+		margin-right: 0;
+	}
+
+	.footer__nav-link--text3
+	{
+		margin-left: 50px;
+		justify-content: space-between;
+	}
+}
+  
+  
