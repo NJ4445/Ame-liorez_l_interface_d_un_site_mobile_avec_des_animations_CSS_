@@ -46,6 +46,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding-top: 10px;
 }
 
 .header__title {
@@ -59,10 +60,11 @@ body {
 }
 
 .fa-arrow-left {
+  width: 30px;
   color: black;
   position: absolute;
-  left: 15px;
-  top: 10px;
+  left: 17px;
+  top: 17px;
   z-index: 1000;
 }
 
