@@ -449,6 +449,10 @@ body
         right: 23rem;
     }
 
+    .heart-label:hover .fa-solid {
+        transform: scale(1);
+      }
+
     .button
     {
         width: 20%;

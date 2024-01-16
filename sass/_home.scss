@@ -666,6 +666,14 @@ header {
         top: 295px;
     }
 
+    .checkbox-heart:hover + .checkbox-heart__label .fa-solid {
+        transform: scale(1);
+      }
+    
+      .checkbox-heart:hover + .checkbox-heart__label .fa-regular {
+        opacity: 0;
+      }
+
     .section-fonctionnement
     {
         padding: 30px 180px 30px 180px;

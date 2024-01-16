@@ -359,6 +359,9 @@ body {
     top: 80px;
     right: 23rem;
   }
+  .heart-label:hover .fa-solid {
+    transform: scale(1);
+  }
   .button {
     width: 20%;
     margin-bottom: 35px;
