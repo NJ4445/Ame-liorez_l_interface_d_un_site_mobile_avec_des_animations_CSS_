@@ -41,7 +41,7 @@ $backgroundFooter: #353535;
     font-size: 100px;
     overflow: hidden;
     animation: hideLoader 2.9s ease-out forwards;
-  
+    
     &:hover {
       margin-right: 20px;
       margin-left: 20px;
@@ -208,7 +208,7 @@ html
     scroll-behavior: smooth;
 }
 
-#index-body
+body
 {
     width: 100%;
     margin: 0;
@@ -219,6 +219,7 @@ html
     min-width: 320px;
     overflow: hidden;
     animation: no-scroll 3s linear forwards;
+    font-family: $police-texte;
 }
 
 /* Loader */
@@ -233,7 +234,7 @@ html
     height: 100vh;
     width: 100vw;
     z-index: 5;
-    background: radial-gradient(circle, $colorWhite 0%, rgba(53, 53, 53, 1) 100%);
+    background: radial-gradient(circle, $primaryColor 0%, rgba(53, 53, 53, 1) 100%);
     transform: translateX(0);
     animation: loader-out 3s ease-out forwards;
     @include loader-before-after;
@@ -247,11 +248,17 @@ html
     cursor: default;
     -webkit-background-clip: text;
     background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(0deg, $secondaryColor 0%, $primaryColor 100%);
     animation: title 3s linear infinite;
 }
 
 .loader__container {
     @include loader-container;
+}
+
+.loader__container i.fa-solid.fa-utensils {
+    color: $secondaryColor;
 }
 
 /* Block: header */
@@ -533,12 +540,9 @@ header {
     color: $colorWhite;
 }
 
-
 /* Version tablette (min-width: 768px) */
 @media screen and (min-width: 768px)
 {
-    
-
     .fonctionnement-card
     {
         align-items: center;
@@ -600,6 +604,7 @@ header {
     .section-hero
     {
         padding: 0;
+        background: #F6F6F6;
     }
 
     .section-hero__title
@@ -742,7 +747,7 @@ header {
 
     .footer__nav-link--text3
     {
-        margin-left: 50px;
+        margin-left: 30px;
         justify-content: space-between;
     }
 }

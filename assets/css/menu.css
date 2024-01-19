@@ -119,9 +119,9 @@ body {
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 300;
-  font-family: "Roboto", sans-serif;
   margin-bottom: 5px;
   margin-top: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .menu__section--separateur {
@@ -167,6 +167,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 500;
+  font-family: "Roboto", sans-serif;
 }
 .menu-card__text-container p {
   margin: 5px 0 0;
@@ -182,10 +183,11 @@ body {
   position: relative;
   display: flex;
   align-items: flex-end;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   font-weight: 600;
   height: 55px;
   width: 30px;
+  font-family: "Roboto", sans-serif;
 }
 
 .menu-card__price--checkbox-container {
@@ -417,7 +419,7 @@ body {
     margin-right: 0;
   }
   .footer__nav-link--text3 {
-    margin-left: 50px;
+    margin-left: 30px;
     justify-content: space-between;
   }
 }
