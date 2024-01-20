@@ -261,7 +261,7 @@ body
     color: $secondaryColor;
 }
 
-/* Block: header */   
+/* Block: header */ 
 header {
     max-width: 100%;
     text-align: center;
@@ -299,6 +299,10 @@ header {
     background: transparent;
     border: none;
     outline: none;
+}
+
+.map__input::placeholder {
+    color: black;
 }
 
 .map__icon,.fa-location-dot
@@ -543,6 +547,10 @@ header {
 /* Version tablette (min-width: 768px) */
 @media screen and (min-width: 768px)
 {
+    .section-hero p
+{
+    font-size: 14px;
+}
     .fonctionnement-card
     {
         align-items: center;

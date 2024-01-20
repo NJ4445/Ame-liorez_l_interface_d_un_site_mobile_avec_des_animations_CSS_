@@ -172,6 +172,10 @@ header .header__title {
   outline: none;
 }
 
+.map__input::placeholder {
+  color: black;
+}
+
 .map__icon, .fa-location-dot {
   position: absolute;
   transform: translateX(-80px);
@@ -452,6 +456,9 @@ header .header__title {
 
 /* Version tablette (min-width: 768px) */
 @media screen and (min-width: 768px) {
+  .section-hero p {
+    font-size: 14px;
+  }
   .fonctionnement-card {
     align-items: center;
   }
