@@ -6,50 +6,6 @@
 /* Mixin pour le bouton */
 /* Mixin pour restaurants-card-badge-new */
 /* Mixin pour le bloc "heart" */
-/* Utilisation keyframes Loader */
-@keyframes no-scroll {
-  from {
-    overflow: hidden;
-  }
-  to {
-    overflow: visible;
-  }
-}
-@keyframes hideLoader {
-  from {
-    transform: rotate(0deg);
-    opacity: 0;
-  }
-  to {
-    transform: rotate(360deg);
-    opacity: 1;
-    visibility: hidden;
-    display: none;
-  }
-}
-@keyframes loader-out {
-  from {
-    transform: translateX(0);
-  }
-  65% {
-    transform: translateX(0);
-  }
-  75% {
-    transform: translateX(30px);
-  }
-  to {
-    transform: translateX(-100%);
-    display: none;
-  }
-}
-@keyframes title {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 /* Général */
 html {
   scroll-behavior: smooth;
@@ -135,6 +91,50 @@ body {
   color: #FF79DA;
 }
 
+/* Utilisation keyframes Loader */
+@keyframes no-scroll {
+  from {
+    overflow: hidden;
+  }
+  to {
+    overflow: visible;
+  }
+}
+@keyframes hideLoader {
+  from {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 1;
+    visibility: hidden;
+    display: none;
+  }
+}
+@keyframes loader-out {
+  from {
+    transform: translateX(0);
+  }
+  65% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(30px);
+  }
+  to {
+    transform: translateX(-100%);
+    display: none;
+  }
+}
+@keyframes title {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* Block: header */
 header {
   max-width: 100%;
@@ -369,6 +369,7 @@ header .header__title {
   appearance: none;
   height: 50px;
   width: 50px;
+  cursor: pointer;
 }
 .checkbox-heart + .checkbox-heart__label {
   position: absolute;
@@ -542,12 +543,6 @@ header .header__title {
   }
   .heart-label {
     top: 295px;
-  }
-  .checkbox-heart:hover + .checkbox-heart__label .fa-solid {
-    transform: scale(1);
-  }
-  .checkbox-heart:hover + .checkbox-heart__label .fa-regular {
-    opacity: 0;
   }
   .section-fonctionnement {
     padding: 30px 180px 30px 180px;

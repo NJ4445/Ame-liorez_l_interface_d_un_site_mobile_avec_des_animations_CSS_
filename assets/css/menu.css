@@ -226,6 +226,7 @@ body {
   display: flex;
   align-items: center;
   font-size: 25px;
+  cursor: pointer;
 }
 .heart-label .fa-solid {
   position: absolute;
@@ -360,9 +361,6 @@ body {
   .heart-label {
     top: 80px;
     right: 23rem;
-  }
-  .heart-label:hover .fa-solid {
-    transform: scale(1);
   }
   .button {
     width: 20%;

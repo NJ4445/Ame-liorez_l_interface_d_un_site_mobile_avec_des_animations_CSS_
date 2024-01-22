@@ -49,6 +49,7 @@ $backgroundFooter: #353535;
     display: flex;
     align-items: center;
     font-size: 25px;
+    cursor: pointer;
   
     .fa-solid {
       position: absolute;
@@ -450,10 +451,6 @@ body
         top: 80px;
         right: 23rem;
     }
-
-    .heart-label:hover .fa-solid {
-        transform: scale(1);
-      }
 
     .button
     {
