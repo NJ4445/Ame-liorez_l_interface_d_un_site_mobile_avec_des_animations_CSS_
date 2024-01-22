@@ -290,8 +290,7 @@ header {
     background: $backgroundMap;
 }
 
-.map__input
-{
+.map__input {
     margin-left: 15px;
     text-align: center;
     font-size: 15px;
@@ -299,10 +298,10 @@ header {
     background: transparent;
     border: none;
     outline: none;
-}
 
-.map__input::placeholder {
-    color: black;
+    &::placeholder {
+        color: black;
+    }
 }
 
 .map__icon,.fa-location-dot

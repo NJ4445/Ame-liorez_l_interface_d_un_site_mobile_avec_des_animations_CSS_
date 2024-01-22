@@ -171,7 +171,6 @@ header .header__title {
   border: none;
   outline: none;
 }
-
 .map__input::placeholder {
   color: black;
 }
