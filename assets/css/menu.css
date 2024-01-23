@@ -37,7 +37,6 @@ body {
   box-sizing: border-box;
   border: none;
   outline: none;
-  min-width: 320px;
 }
 
 /* Block: header */
@@ -361,6 +360,12 @@ body {
   .heart-label {
     top: 80px;
     right: 23rem;
+  }
+  .heart-checkbox:hover + .heart-label .fa-solid {
+    transform: scale(1);
+  }
+  .heart-checkboxt:hover + .heart-label .fa-regular {
+    opacity: 0;
   }
   .button {
     width: 20%;

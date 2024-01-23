@@ -2,7 +2,7 @@
 /* Variables pour les polices */
 /* Variables pour les couleurs */
 /* Mixin Loader::before et ::after */
-/* Mixin Loader-container avec effet de survol */
+/* Mixin Loader-container */
 /* Mixin pour le bouton */
 /* Mixin pour restaurants-card-badge-new */
 /* Mixin pour le bloc "heart" */
@@ -78,13 +78,6 @@ body {
   font-size: 100px;
   overflow: hidden;
   animation: hideLoader 2.9s ease-out forwards;
-}
-.loader__container:hover {
-  margin-right: 20px;
-  margin-left: 20px;
-}
-.loader__container:hover::after {
-  opacity: 1;
 }
 
 .loader__container i.fa-solid.fa-utensils {
@@ -373,7 +366,7 @@ header .header__title {
 }
 .checkbox-heart + .checkbox-heart__label {
   position: absolute;
-  bottom: 0px;
+  bottom: 7px;
   right: 0px;
   font-size: 25px;
 }
@@ -508,6 +501,7 @@ header .header__title {
   .section-hero p {
     font-size: 18px;
   }
+  /* Block: restaurants */
   #restaurants {
     padding: 10px 180px;
   }
@@ -515,20 +509,11 @@ header .header__title {
     width: calc(45% - 10px);
     justify-items: center;
     margin-bottom: 2rem;
-    padding-bottom: 100px;
-    transform: scale(1);
-    transition: transform 0.2s ease;
-  }
-  .restaurants-card:hover {
-    transform: scale(1);
+    padding-bottom: 75px;
   }
   .restaurants-card img {
     width: 100%;
-    height: 275px;
-    transition: height 0.5s ease 0s;
-  }
-  .restaurants-card:hover img {
-    height: 400px;
+    height: 250px;
   }
   .restaurants__card-container {
     flex-wrap: wrap;
@@ -541,9 +526,7 @@ header .header__title {
     padding-left: 5px;
     margin-left: 0;
   }
-  .heart-label {
-    top: 295px;
-  }
+  /* Block: fonctionnement */
   .section-fonctionnement {
     padding: 30px 180px 30px 180px;
   }
@@ -559,6 +542,13 @@ header .header__title {
   }
   .fonctionnement-card {
     width: 25%;
+  }
+  /* Block: heart */
+  .checkbox-heart:hover + .checkbox-heart__label .fa-solid {
+    transform: scale(1);
+  }
+  .checkbox-heart:hover + .checkbox-heart__label .fa-regular {
+    opacity: 0;
   }
   /* Block: footer */
   .footer {
