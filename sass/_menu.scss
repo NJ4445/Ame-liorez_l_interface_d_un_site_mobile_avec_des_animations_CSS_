@@ -84,7 +84,6 @@ $backgroundFooter: #353535;
     }
   }
 
-
   /* Mixin pour le footer */
 @mixin footer-styles {
     padding: 22px 20px 10px 25px;
@@ -495,6 +494,7 @@ body
         }
     }
 
+     /* Block: footer */
     .footer
     {
         display: flex;

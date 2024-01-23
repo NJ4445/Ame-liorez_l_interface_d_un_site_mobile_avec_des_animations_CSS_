@@ -390,6 +390,7 @@ body {
       transform: translateX(0);
     }
   }
+  /* Block: footer */
   .footer {
     display: flex;
     align-items: center;
