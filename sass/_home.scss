@@ -573,14 +573,30 @@ header
 
 	.fonctionnement-card
 	{
-		align-items: center;
+        width: 100%;
 	}
 
 	.section-fonctionnement__title
 	{
-		padding-left: 70px;
+		padding-left: 60px;
 	}
 
+	.fonctionnement-card-title
+	{
+		left: 70px; 
+	}
+
+	.fonctionnement-card i
+	{
+		left: 30px; 
+	}
+
+	.fonctionnement-container
+	{
+		padding: 0;
+	}
+
+	 /* Block: restaurants */
 	#restaurants
 	{
 		padding: 10px 20px 50px 20px;
