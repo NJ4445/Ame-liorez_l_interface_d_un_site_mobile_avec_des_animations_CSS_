@@ -155,7 +155,7 @@ body {
 }
 
 .menu-card__text-container {
-  padding: 15px;
+  padding: 10px 15px;
   width: calc(100% - 50px);
   transition: width 0.5s ease;
 }

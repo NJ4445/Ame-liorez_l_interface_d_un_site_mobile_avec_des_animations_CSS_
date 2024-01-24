@@ -229,7 +229,7 @@ body
   }
   
   .menu-card__text-container {
-    padding: 15px;
+    padding: 10px 15px;
     width: calc(100% - 50px);
     @include transition(width, 0.5s);
   
@@ -272,7 +272,7 @@ body
     height: 72px;
     width: 70px;
     background: $tertiaryColor;
-  
+
     .checkbox-circle {
       display: flex;
       justify-content: center;
