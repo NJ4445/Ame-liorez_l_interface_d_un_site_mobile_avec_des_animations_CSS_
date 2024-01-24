@@ -568,7 +568,7 @@ header
 {
 	.section-hero p
 	{
-		font-size: 14px;
+		font-size: 11.5px;
 	}
 
 	.fonctionnement-card
@@ -593,7 +593,7 @@ header
 
 	.fonctionnement-container
 	{
-		padding: 0;
+		padding-left: 70px;
 	}
 
 	 /* Block: restaurants */
@@ -709,7 +709,7 @@ header
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		padding-left: 15px;
+		padding: 0 15px;
 	}
 
 	.section-fonctionnement__title

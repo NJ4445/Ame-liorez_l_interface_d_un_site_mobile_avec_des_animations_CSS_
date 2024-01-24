@@ -449,7 +449,7 @@ header .header__title {
 /* Version tablette (min-width: 768px) */
 @media screen and (min-width: 768px) {
   .section-hero p {
-    font-size: 14px;
+    font-size: 11.5px;
   }
   .fonctionnement-card {
     width: 100%;
@@ -464,7 +464,7 @@ header .header__title {
     left: 30px;
   }
   .fonctionnement-container {
-    padding: 0;
+    padding-left: 70px;
   }
   /* Block: restaurants */
   #restaurants {
@@ -543,7 +543,7 @@ header .header__title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 15px;
+    padding: 0 15px;
   }
   .section-fonctionnement__title {
     width: 20%;
