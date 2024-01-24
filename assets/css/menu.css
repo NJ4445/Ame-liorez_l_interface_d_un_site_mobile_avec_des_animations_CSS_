@@ -211,6 +211,27 @@ body {
   color: #99E2D0;
 }
 
+/* Animation des sections du menu */
+.first-section {
+  animation-delay: 0.2s;
+}
+
+.second-section {
+  animation-delay: 0.4s;
+}
+
+.third-section {
+  animation-delay: 0.6s;
+}
+
+@keyframes menu-section-in {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 /* Block: heart */
 .heart-label {
   position: absolute;
@@ -371,24 +392,6 @@ body {
     width: 20%;
     margin-bottom: 35px;
     padding: 15px;
-  }
-  /* Animation des sections du menu */
-  .first-section {
-    animation-delay: 0.2s;
-  }
-  .second-section {
-    animation-delay: 0.4s;
-  }
-  .third-section {
-    animation-delay: 0.6s;
-  }
-  @keyframes menu-section-in {
-    from {
-      transform: translateX(100vw);
-    }
-    to {
-      transform: translateX(0);
-    }
   }
   /* Block: footer */
   .footer {
