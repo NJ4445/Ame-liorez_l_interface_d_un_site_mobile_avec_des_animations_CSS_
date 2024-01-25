@@ -94,7 +94,6 @@ $backgroundFooter: #353535;
 	height: 50px;
 	width: 50px;
 	cursor: pointer;
-
 	& + .checkbox-heart__label
 	{
 		position: absolute;
@@ -133,6 +132,32 @@ $backgroundFooter: #353535;
 	&:checked + .checkbox-heart__label .fa-regular
 	{
 		opacity: 0;
+	}
+
+	/* Bloc : animation du cœur */
+	.checkbox-heart__label .fa-solid,.checkbox-heart__label .fa-regular
+	{
+		transition: transform 0.2s ease, opacity 0.2s ease;
+	}
+
+	.checkbox-heart:hover + .checkbox-heart__label .fa-solid
+	{
+		transform: scale(1);
+	}
+
+	.checkbox-heart:hover + .checkbox-heart__label .fa-regular
+	{
+		opacity: 0;
+	}
+
+	.checkbox-heart:not(:hover) + .checkbox-heart__label .fa-solid
+	{
+		transform: scale(0);
+	}
+
+	.checkbox-heart:not(:hover) + .checkbox-heart__label .fa-regular
+	{
+		opacity: 1;
 	}
 }
 
@@ -374,7 +399,7 @@ header
 
 .fonctionnement-card
 {
-	width: 80%; 
+	width: 80%;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -573,7 +598,7 @@ header
 
 	.fonctionnement-card
 	{
-        width: 100%;
+		width: 100%;
 	}
 
 	.section-fonctionnement__title
@@ -583,20 +608,20 @@ header
 
 	.fonctionnement-card-title
 	{
-		left: 70px; 
+		left: 70px;
 	}
 
 	.fonctionnement-card i
 	{
-		left: 30px; 
+		left: 30px;
 	}
 
 	.fonctionnement-container
 	{
-		padding-left: 70px;
+		padding: 0 70px;
 	}
 
-	 /* Block: restaurants */
+	/* Block: restaurants */
 	#restaurants
 	{
 		padding: 10px 20px 50px 20px;
@@ -663,7 +688,7 @@ header
 		font-size: 18px;
 	}
 
-     /* Block: restaurants */
+	/* Block: restaurants */
 	#restaurants
 	{
 		padding: 10px 180px;
@@ -698,7 +723,7 @@ header
 		margin-left: 0;
 	}
 
-    /* Block: fonctionnement */
+	/* Block: fonctionnement */
 	.section-fonctionnement
 	{
 		padding: 30px 180px 30px 180px;
@@ -723,14 +748,16 @@ header
 		width: 25%;
 	}
 
-    /* Block: heart */
-    .checkbox-heart:hover + .checkbox-heart__label .fa-solid {
-        transform: scale(1);
-      }
-    
-      .checkbox-heart:hover + .checkbox-heart__label .fa-regular {
-        opacity: 0;
-      }
+	/* Block: heart */
+	.checkbox-heart:hover + .checkbox-heart__label .fa-solid
+	{
+		transform: scale(1);
+	}
+
+	.checkbox-heart:hover + .checkbox-heart__label .fa-regular
+	{
+		opacity: 0;
+	}
 
 	/* Block: footer */
 	.footer

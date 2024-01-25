@@ -362,6 +362,7 @@ header .header__title {
   height: 50px;
   width: 50px;
   cursor: pointer;
+  /* Bloc : animation du cœur */
 }
 .checkbox-heart + .checkbox-heart__label {
   position: absolute;
@@ -393,6 +394,21 @@ header .header__title {
 }
 .checkbox-heart:checked + .checkbox-heart__label .fa-regular {
   opacity: 0;
+}
+.checkbox-heart .checkbox-heart__label .fa-solid, .checkbox-heart .checkbox-heart__label .fa-regular {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.checkbox-heart .checkbox-heart:hover + .checkbox-heart__label .fa-solid {
+  transform: scale(1);
+}
+.checkbox-heart .checkbox-heart:hover + .checkbox-heart__label .fa-regular {
+  opacity: 0;
+}
+.checkbox-heart .checkbox-heart:not(:hover) + .checkbox-heart__label .fa-solid {
+  transform: scale(0);
+}
+.checkbox-heart .checkbox-heart:not(:hover) + .checkbox-heart__label .fa-regular {
+  opacity: 1;
 }
 
 /* Block: footer */
@@ -464,7 +480,7 @@ header .header__title {
     left: 30px;
   }
   .fonctionnement-container {
-    padding-left: 70px;
+    padding: 0 70px;
   }
   /* Block: restaurants */
   #restaurants {

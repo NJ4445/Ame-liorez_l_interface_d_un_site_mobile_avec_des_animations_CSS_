@@ -390,7 +390,7 @@ body {
   .heart-checkbox:hover + .heart-label .fa-solid {
     transform: scale(1);
   }
-  .heart-checkboxt:hover + .heart-label .fa-regular {
+  .heart-checkbox:hover + .heart-label .fa-regular {
     opacity: 0;
   }
   .button {
