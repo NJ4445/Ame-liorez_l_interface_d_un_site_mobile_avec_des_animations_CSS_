@@ -331,8 +331,8 @@ body {
   top: 26px;
 }
 
-/* Version tablette (min-width: 768px) */
-@media screen and (min-width: 768px) and (max-width: 1439px) {
+/* Version tablette (min-width: 392px) */
+@media screen and (min-width: 392px) and (max-width: 1439px) {
   .header {
     display: flex;
     padding: 15px;
